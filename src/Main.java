@@ -1,10 +1,10 @@
 /**
- * main class wich does nothing but call the day class
+ * main class which does nothing but call the day class
  */
 public class Main
 {
     /**
-     * just a sysout with a simpler syntax
+     * just a sys out with a simpler syntax
      * @param o object to print
      */
     public static void print(Object o)
@@ -18,7 +18,7 @@ public class Main
      */
     public static void main(String[] args)
     {
-        String path = System.getProperty("user.dir") + "/resources/1_Trebuchet.txt";
-        System.out.println(Trebuchet.solve(path));
+        String path = System.getProperty("user.dir") + "/resources/2_Cube_Conundrum.txt";
+        System.out.println(Conundrum.solve(path));
     }
 }

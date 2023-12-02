@@ -21,11 +21,16 @@ public class Trebuchet
         int last = -1;
         CharacterIterator it = new StringCharacterIterator(word);
         char c = it.current();
+
+        // we read every character one by one
         while (c != CharacterIterator.DONE)
         {
+            // if the character is a digit, we save it
             if (c >= '0' && c <= '9')
             {
                 last = Character.getNumericValue(c);
+
+                // save of the first digit of the word
                 if (first < 0)
                     first = last;
             }
@@ -45,11 +50,13 @@ public class Trebuchet
         int first = -1;
         int last = -1;
         String number = "";
-
         CharacterIterator it = new StringCharacterIterator(word);
         char c = it.current();
+
+        // we read every character one by one
         while (c != CharacterIterator.DONE)
         {
+            // same than getCalibrationValue
             if (c >= '0' && c <= '9')
             {
                 number = "";
@@ -57,17 +64,22 @@ public class Trebuchet
                 if (first < 0)
                     first = last;
             }
+            // additional letters management
             else
             {
                 number += c;
                 boolean found = false;
                 int i = 0;
+
+                // we search if a number starts with the current part
                 while (i<10 && !found)
                 {
                     found = numbers[i].startsWith(number);
                     i++;
                 }
                 i--;
+
+                // if there is a match, we see if it is complete
                 if (found)
                 {
                     if (number.equals(numbers[i]))
@@ -78,6 +90,7 @@ public class Trebuchet
                         number = "";
                     }
                 }
+                // if not, we see if the end of the part is the start of a number
                 else
                 {
                     while (!number.isEmpty() && !found)
@@ -126,7 +139,6 @@ public class Trebuchet
             while ((line = reader.readLine()) != null)
             {
                 res += getTrueValue(line);
-                System.out.println(getTrueValue(line) + "   " + line);
             }
             reader.close();
             isreader.close();
