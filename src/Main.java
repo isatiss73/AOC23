@@ -18,7 +18,7 @@ public class Main
      */
     public static void main(String[] args)
     {
-        String path = System.getProperty("user.dir") + "/resources/2_Cube_Conundrum.txt";
-        System.out.println(Conundrum.solve(path));
+        String path = System.getProperty("user.dir") + "/resources/4_Scratchcards.txt";
+        System.out.println(Scratchcards.solve(path));
     }
 }
